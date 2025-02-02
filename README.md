@@ -24,3 +24,15 @@ hint: See PEP 668 for the detailed specification.
 1. find /usr/lib -name EXTERNALLY-MANAGED
 2.sudo mv /usr/lib/python3.11/EXTERNALLY-MANAGED /etc/motd
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+here's mine opinion
+Issue: You're trying to install a Python package using pip, but the environment is externally managed, meaning that package management is handled by the system package manager (apt) rather than pip.
+
+Suggested Solutions:
+1. Install system-wide using apt: Try installing the package using apt, like this: apt install python3-xyz, replacing xyz with the package name you're trying to install.
+
+2. Create a virtual environment: Create a virtual environment using python3 -m venv path/to/venv, then activate it and install packages using pip.
+
+3. Use pipx: If you want to install a non-Debian-packaged Python application, consider using pipx install xyz, which will manage a virtual environment for you.
